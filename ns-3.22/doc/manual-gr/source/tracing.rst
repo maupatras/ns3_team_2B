@@ -16,9 +16,12 @@
 
 Τεστ Τεστ
 
-In other words, the whole point of running a simulation is to generate output
-for further study. In |ns3|, the subsystem that enables a researcher to do this
-is the tracing subsystem.
+..
+ In other words, the whole point of running a simulation is to generate output
+ for further study. In |ns3|, the subsystem that enables a researcher to do this
+ is the tracing subsystem.
+ 
+ Με άλλα λόγια, 
 
 Tracing Motivation
 ******************
