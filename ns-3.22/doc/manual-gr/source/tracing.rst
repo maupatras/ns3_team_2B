@@ -21,7 +21,7 @@
  for further study. In |ns3|, the subsystem that enables a researcher to do this
  is the tracing subsystem.
  
- Με άλλα λόγια, 
+Με άλλα λόγια, 
 
 Tracing Motivation
 ******************
