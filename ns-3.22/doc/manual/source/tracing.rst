@@ -1,7 +1,9 @@
 .. include:: replace.txt
 .. highlight:: cpp
 
-Tracing
+.. Tracing
+
+Ιχνηλασία
 -------
 
 The tracing subsystem is one of the most important mechanisms to understand in
