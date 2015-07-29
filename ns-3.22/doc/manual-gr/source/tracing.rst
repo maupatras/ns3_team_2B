@@ -42,9 +42,11 @@ output, as in, ::
     ...
   } 
 
-This is workable in small environments, but as your simulations get more and
+.. This is workable in small environments, but as your simulations get more and
 more complicated, you end up with more and more prints and the task of parsing
 and performing computations on the output begins to get harder and harder.
+
+Αυτό εφραμόζεται σε μικρά περιβάλλοντα, αλλά καθώς η προσομοίωση σας γίνεται όλο και περισσότερο πολύπλοκη, καταλήγετε με όλο και περισσότερες εκτυπώσεις και το έργο της ανάλυσης που εκτελεί υπολογισμούς σχετικά με την παραγωγή γίνεται ολοένα και πιο δύσκολο.
 
 Another thing to consider is that every time a new tidbit is needed, the
 software core must be edited and another print introduced. There is no
