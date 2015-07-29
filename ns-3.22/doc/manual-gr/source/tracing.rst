@@ -21,14 +21,17 @@ To υποσύστημα ιχνηλασίας είναι ένας από τους
  for further study. In |ns3|, the subsystem that enables a researcher to do this
  is the tracing subsystem.
  
-Με άλλα λόγια, το νόημα να τρέξεις μία προσομοίωση είναι να παράγει έξοδο για περαιτέρω ανάλυση. Στον |ns3|, το υποσύστημα που επιτρέπει σε έναν ερευνητή να το κάνει αυτό είναι το υποσύστηα ιχνηλασίας.
+Με άλλα λόγια, το νόημα να τρέξεις μία προσομοίωση είναι να παράγει έξοδο για περαιτέρω ανάλυση. Στον |ns3|, το υποσύστημα που επιτρέπει σε έναν ερευνητή να το κάνει αυτό είναι το υποσύστημα ιχνηλασίας.
 
-Tracing Motivation
+.. Tracing Motivation
 ******************
+Κίνητρα Ιχνηλασίας
 
-There are many ways to get information out of a program. The most
+.. There are many ways to get information out of a program. The most
 straightforward way is to just directly print the information to the standard
 output, as in, ::
+
+Υπάρχουν πολλοί τρόποι να πάρεις πληροφορία από ένα πρόγραμμα. Ο πιο απλός είναι να εκτυπώσετε άμεσα τη πληροφορία με το πρότυπο εξόδου, όπως, ::
 
   #include <iostream>
   ...
