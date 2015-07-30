@@ -26,7 +26,7 @@ To υποσύστημα ιχνηλασίας είναι ένας από τους
  In other words, the whole point of running a simulation is to generate output
  for further study. In |ns3|, the subsystem that enables a researcher to do this
  is the tracing subsystem.
- 
+
 Με άλλα λόγια, το νόημα να τρέξεις μία προσομοίωση είναι να παράγει έξοδο για 
 περαιτέρω ανάλυση. Στον |ns3|, το υποσύστημα που επιτρέπει σε έναν ερευνητή να 
 το κάνει αυτό είναι το υποσύστημα ιχνηλασίας.
