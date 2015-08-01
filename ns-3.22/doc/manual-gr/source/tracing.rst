@@ -70,7 +70,8 @@ To υποσύστημα ιχνηλασίας είναι ένας από τους
  this information begins to limit the running time of the simulation. The output
  files grow to enormous sizes and parsing them becomes a problem.
  
-Ένα επιπλέον γεγονός που πρέπει να σκεφτούμε είναι ότι κάθε φορά που χρειάζεται μια καινούργια πληροφορία, πρέπει να επεξεργαστεί ο πυρήνας του λογισμικού και να γίνει ακόμα μία εκτύπωση. Δεν υπάρχει τυποποιημένος τρόπος να ελεχθεί όλη η έξοδος, έτσι το ποσό της εξόδου τείνει να μεγαλώσει χωρίς όρια. Τελικά, το εύρος ζώνης που απαιτείται για την έξοδο αυτής της πληροφορίας αρχίζει να μειώνει το χρόνο λειτουργίας της προσομοίωσης. Τα αρχεία εξόδου μεγαλώνουν σε μεγάλα μεγέθη και η ανάλυσή τους γίνεται πρόβλημα. 
+Ένα επιπλέον γεγονός που πρέπει να σκεφτούμε είναι ότι κάθε φορά που χρειάζεται μια καινούργια πληροφορία, 
+πρέπει να επεξεργαστεί ο πυρήνας του λογισμικού και να γίνει ακόμα μία εκτύπωση. Δεν υπάρχει τυποποιημένος τρόπος να ελεχθεί όλη η έξοδος, έτσι το ποσό της εξόδου τείνει να μεγαλώσει χωρίς όρια. Τελικά, το εύρος ζώνης που απαιτείται για την έξοδο αυτής της πληροφορίας αρχίζει να μειώνει το χρόνο λειτουργίας της προσομοίωσης. Τα αρχεία εξόδου μεγαλώνουν σε μεγάλα μεγέθη και η ανάλυσή τους γίνεται πρόβλημα. 
 
 
 ..
@@ -78,16 +79,24 @@ To υποσύστημα ιχνηλασίας είναι ένας από τους
  output via *Log Components*, but the level of control is not very fine grained
  at all. The logging module is a relatively blunt instrument.
  
-Ο |ns3| παρέχει έναν απλό μηχανισμό για την καταγραφή και τη παροχή ελέγχου στην έξοδο μέσω των *Log Components*, αλλά το μέγεθος του ελέγχου δεν είναι
+Ο |ns3| παρέχει έναν απλό μηχανισμό για την καταγραφή και τη παροχή ελέγχου στην έξοδο μέσω των *Log Components*, αλλά το μέγεθος του ελέγχου δεν έχει καθόλου καλή διακριτότητα. Η μονάδα καταγραφής είναι ένα απερίφραστο όργανο.
  
  
  
 
-It is desirable to have a facility that allows one to reach into the core system
-and only get the information required without having to change and recompile the
-core system. Even better would be a system that notified the user when an item
-of interest changed or an interesting event happened.
-
+..
+ It is desirable to have a facility that allows one to reach into the core system
+ and only get the information required without having to change and recompile the
+ core system. Even better would be a system that notified the user when an item
+ of interest changed or an interesting event happened.
+ 
+Είναι επιθυμητό να έχουμε μία εγκατάσταση που επιτρέπει σε κάποιον να φτάσει στον 
+πυρήνα του συστήματος και να πάρει μόνο τις απαραίτητες πληροφορίες χωρίς να χρειάζεται 
+να αλλάξει και να ξανακάνει compile το πυρήνα του συστήματος. Ακόμα καλύτερο θα ήταν 
+ένα σύστημα που κοινοποιεί στο χρήστη όταν ένα ενδιαφέρον αντικείμενο άλλαξε ή αν ένα ενδιαφέρον γεγονός συνέβη.
+ 
+ 
+ 
 The |ns3| tracing system is designed to work along those lines and is
 well-integrated with the Attribute and Config substems allowing for relatively
 simple use scenarios.
