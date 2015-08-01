@@ -79,7 +79,9 @@ To υποσύστημα ιχνηλασίας είναι ένας από τους
  output via *Log Components*, but the level of control is not very fine grained
  at all. The logging module is a relatively blunt instrument.
  
-Ο |ns3| παρέχει έναν απλό μηχανισμό για την καταγραφή και τη παροχή ελέγχου στην έξοδο μέσω των *Log Components*, αλλά το μέγεθος του ελέγχου δεν έχει καθόλου καλή διακριτότητα. Η μονάδα καταγραφής είναι ένα απερίφραστο όργανο.
+Ο |ns3| παρέχει έναν απλό μηχανισμό για την καταγραφή και τη παροχή ελέγχου στην 
+έξοδο μέσω των *Log Components*, αλλά το μέγεθος του ελέγχου δεν έχει καθόλου καλή διακριτότητα. 
+Η μονάδα καταγραφής είναι ένα απερίφραστο όργανο.
  
  
  
@@ -96,17 +98,30 @@ To υποσύστημα ιχνηλασίας είναι ένας από τους
 ένα σύστημα που κοινοποιεί στο χρήστη όταν ένα ενδιαφέρον αντικείμενο άλλαξε ή αν ένα ενδιαφέρον γεγονός συνέβη.
  
  
+..
+ The |ns3| tracing system is designed to work along those lines and is
+ well-integrated with the Attribute and Config substems allowing for relatively
+ simple use scenarios.
  
-The |ns3| tracing system is designed to work along those lines and is
-well-integrated with the Attribute and Config substems allowing for relatively
-simple use scenarios.
+Το σύστημα ανίχνευσης είναι σχεδιασμένο να δουλεύει προς αυτή την κατεύθυνση και είναι καλα ενσωματωμένο με τα
+υποσυστήματα Αttribute και Config επιτρέποντας τη χρήση σχετικών και απλών σενάριων.
+ 
 
-Overview
+
+
+.. Overview
+
+Eπισκόπηση
 ********
 
-The tracing subsystem relies heavily on the |ns3| Callback and Attribute
-mechanisms. You should read and understand the corresponding sections of the
-manual before attempting to understand the tracing system.
+..
+ The tracing subsystem relies heavily on the |ns3| Callback and Attribute
+ mechanisms. You should read and understand the corresponding sections of the
+ manual before attempting to understand the tracing system.
+
+Το υποσύστημα εντοπισμού εξαρτάται σε μεγάλο βαθμό από τους μηχανισμούς Callback και 
+Attribute μηχανισμούς του |ns3|. Πρέπει να διαβάσετε και να καταλάβετε τις αντίστοιχες ενότητες
+του εγχειριδίου πριν προσπαθήσετε να καταλάβετε το υποσύστημα μηχανισμού.
 
 The |ns3| tracing system is built on the concepts of independent tracing sources
 and tracing sinks; along with a uniform mechanism for connecting sources to
