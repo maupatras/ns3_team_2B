@@ -133,12 +133,21 @@ Attribute μηχανισμούς του |ns3|. Πρέπει να διαβάσε�
 
 
 
-Trace sources are entities that can signal events that happen in a simulation
-and provide access to interesting underlying data. For example, a trace source
-could indicate when a packet is received by a net device and provide access to
-the packet contents for interested trace sinks. A trace source might also
-indicate when an interesting state change happens in a model. For example, the
-congestion window of a TCP model is a prime candidate for a trace source.
+..
+ Trace sources are entities that can signal events that happen in a simulation
+ and provide access to interesting underlying data. For example, a trace source
+ could indicate when a packet is received by a net device and provide access to
+ the packet contents for interested trace sinks. A trace source might also
+ indicate when an interesting state change happens in a model. For example, the
+ congestion window of a TCP model is a prime candidate for a trace source.
+ 
+Οι πηγές ανίχνευσης είναι οντότητες που μπορεί να σηματοδοτήσουν γεγονότα που συμβαίνουν 
+σε μια προσομοίωση και παρέχουν πρόσβαση υποκείμενα δεδομένα. Για παράδειγμα, μία πηγή
+ανίχνευσης θα μπορούσε να αναφέρει πότε ένα πακέτο παραλαμβάνεται από μία συσκευή δικτύου
+και να παρέχει πρόσβαση στα περιεχόμενα του πακέτου για τις ενδιαφερόμενες καταβόθρες 
+ανίχνευσης. Μία πήγη ανίχνευσης μπορεί επίσης να αναφέρει πότε μια ενδιαφέρουσα αλλαγή 
+κατάστασης συμβαίνει σε ένα μοντέλο. Για παράδειγμα,  το παράθυρο συμφόρησης από ένα
+μοντέλο TCP είναι ο κύριος υποψήφιος για πηγή ανίχνευσης.
 
 Trace sources are not useful by themselves; they must be connected to other
 pieces of code that actually do something useful with the information provided
