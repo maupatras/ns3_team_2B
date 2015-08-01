@@ -123,9 +123,15 @@ Eπισκόπηση
 Attribute μηχανισμούς του |ns3|. Πρέπει να διαβάσετε και να καταλάβετε τις αντίστοιχες ενότητες
 του εγχειριδίου πριν προσπαθήσετε να καταλάβετε το υποσύστημα μηχανισμού.
 
-The |ns3| tracing system is built on the concepts of independent tracing sources
-and tracing sinks; along with a uniform mechanism for connecting sources to
-sinks.
+..
+ The |ns3| tracing system is built on the concepts of independent tracing sources
+ and tracing sinks; along with a uniform mechanism for connecting sources to
+ sinks.
+ 
+Το υποσύστημα μηχανισμού του  |ns3| είναι χτισμένο στις έννοιες των ανεξάρτητων πηγών και καταβόθρων 
+ανίχνευσης, μαζί με έναν ομοιόμορφο μηχανισμό για τη σύνδεση πηγών σε καταβόθρες.
+
+
 
 Trace sources are entities that can signal events that happen in a simulation
 and provide access to interesting underlying data. For example, a trace source
