@@ -229,8 +229,11 @@ Attribute μηχανισμούς του |ns3|. Πρέπει να διαβάσε�
 Το απλούστερο Παράδειγμα
 ++++++++++++++++++++
 
-It will be useful to go walk a quick example just to reinforce what we've
-said.::
+..
+ It will be useful to go walk a quick example just to reinforce what we've
+ said.::
+ 
+Είναι χρήσιμο να δούμε ένα γρήγορο παράδειγμα για να εμπεδώσουμε αυτά που έχουμε πει.::
  
   #include "ns3/object.h"
   #include "ns3/uinteger.h"
@@ -241,11 +244,18 @@ said.::
   
   using namespace ns3;
 
-The first thing to do is include the required files. As mentioned above, the
-trace system makes heavy use of the Object and Attribute systems. The first two
-includes bring in the declarations for those systems. The file,
-``traced-value.h`` brings in the required declarations for tracing data that
-obeys value semantics.  
+.. 
+ The first thing to do is include the required files. As mentioned above, the
+ trace system makes heavy use of the Object and Attribute systems. The first two
+ includes bring in the declarations for those systems. The file,
+ ``traced-value.h`` brings in the required declarations for tracing data that
+ obeys value semantics. 
+ 
+Το πρώτο πράγμα που πρέπει να κάνουμε είναι να συμπεριλάβουμε όλα τα απαραίτητα αρχεία. 
+Όπως αναφέρθηκε ποιο πάνω, το σύστημα εντοπισμού κάνει βαριά χρήση των συστημάτων 
+Object και Attribute. Tα δύο πρώτα περιλαμβάνουν περιλαμβάνουν τις δηλώσεις για αυτά τα 
+συστήματα. Το αρχείο, ``traced-value.h`` φέρνει τις απαραίτητες δηλώσεις για να ανιχνεύουν
+τα δεδομένα  δεδομένα που έχουν σημασιολογική αξία.
 
 In general, value semantics just means that you can pass the object around, not
 an address. In order to use value semantics at all you have to have an object
