@@ -186,13 +186,24 @@ Attribute μηχανισμούς του |ns3|. Πρέπει να διαβάσε�
 που παράγονται απο μία πηγή ανίχνευσης. Μπορεί κάποιος να σκεφτεί τη πηγή ανίχνευσης
 ως ένα είδος point-to-multipoint συνδέσμου πληροφορίας.
 
-The "transport protocol" for this conceptual point-to-multipoint link is an 
-|ns3| ``Callback``.
+..
+ The "transport protocol" for this conceptual point-to-multipoint link is an 
+ |ns3|``Callback``.
+ 
+Το πρωτόκολλο μεταφοράς για αυτόν τον εννοιολογικό σύνδεσμο point-to-multipoint
+είναι ένα |ns3|``Callback``.
 
-Recall from the Callback Section that callback facility is a way to allow two
-modules in the system to communicate via function calls while at the same time
-decoupling the calling function from the called class completely. This is the
-same requirement as outlined above for the tracing system.
+..
+ Recall from the Callback Section that callback facility is a way to allow two
+ modules in the system to communicate via function calls while at the same time
+ decoupling the calling function from the called class completely. This is the
+ same requirement as outlined above for the tracing system.
+ 
+Θυμηθείτε από το τμήμα Callback ότι η εγκαθίδρυση του callback είναι ένας τρόπος
+για να επιτρέψει σε δύο ενότητες στο σύστημα να επικοινωνούν μέσω κλήσεων λειτουργίας
+ενώ ταυτόχρονα αποσυνδέι τη λειτουργία της κλήσης από την καλούμενη κλάση εντελώς.
+Αυτή είναι η ίδια απαίτηση όπως περιγράφεται πραπάνω για το σύστημα εντοπισμού.
+
 
 Basically, a trace source *is* a callback to which multiple functions may be
 registered. When a trace sink expresses interest in receiving trace events, it
