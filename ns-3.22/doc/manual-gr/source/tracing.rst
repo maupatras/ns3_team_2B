@@ -32,8 +32,9 @@ To υποσύστημα ιχνηλασίας είναι ένας από τους
 το κάνει αυτό είναι το υποσύστημα ιχνηλασίας.
 
 .. Tracing Motivation
-******************
+
 Κίνητρα Ιχνηλασίας
+******************
 
 .. 
  There are many ways to get information out of a program. The most
