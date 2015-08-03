@@ -306,7 +306,7 @@ plain-old-data (POD). Operator=, operator++, operator--, operator+,
  two important lines of code are the ``.AddTraceSource`` and the ``TracedValue``
  declaration.
 
-Καθ
+
 The ``.AddTraceSource`` provides the "hooks" used for connecting the trace
 source to the outside world. The ``TracedValue`` declaration provides the
 infrastructure that overloads the operators mentioned above and drives the
