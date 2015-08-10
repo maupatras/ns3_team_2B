@@ -442,17 +442,28 @@ congestion window in the TCP socket, the registered callback will be executed
 and the function ``CwndTracer`` will be called printing out the old and new
 values of the TCP congestion window.
 
-Using the Tracing API
+..
+	Using the Tracing API
+
+Χρησιμοποιώντας την διεπαφή (API) Ιχνηλασίας
+	
 *********************
 
-There are three levels of interaction with the tracing system:
+..
+	There are three levels of interaction with the tracing system:
 
-* Beginning user can easily control which objects are participating in tracing;
-* Intermediate users can extend the tracing system to modify the output format
-  generated or use existing trace sources in different ways, without modifying
-  the core of the simulator;
-* Advanced users can modify the simulator core to add new tracing sources and
-  sinks. 
+	* Beginning user can easily control which objects are participating in tracing;
+	* Intermediate users can extend the tracing system to modify the output format
+	  generated or use existing trace sources in different ways, without modifying
+	  the core of the simulator;
+	* Advanced users can modify the simulator core to add new tracing sources and
+	  sinks. 
+
+Υπάρχουν τρία επίπεδα αλληλεπίδρασης με το υποσύστημα Ιχνηλασίας:
+
+* Ένας αρχάριος χρήστης μπορεί εύκολα να χειριστέι ποία αντικείμενα να συμμετέχουν στον μηχανισμό Ιχνηλασίας;
+* Ένας έμπειρος χρήστης μπορεί να επεκτείνει το σύστημα Ιχνηλασίας για να τροποποιήσει την μορφή εξόδου που δημιουργήθηκε ή να χρησιμοπο
+
 
 Using Trace Helpers
 *******************
