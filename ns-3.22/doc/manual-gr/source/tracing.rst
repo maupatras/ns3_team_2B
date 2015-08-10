@@ -461,48 +461,96 @@ values of the TCP congestion window.
 
 Υπάρχουν τρία επίπεδα αλληλεπίδρασης με το υποσύστημα Ιχνηλασίας:
 
-* Ένας αρχάριος χρήστης μπορεί εύκολα να χειριστέι ποία αντικείμενα να συμμετέχουν στον μηχανισμό Ιχνηλασίας;
-* Ένας έμπειρος χρήστης μπορεί να επεκτείνει το σύστημα Ιχνηλασίας για να τροποποιήσει την μορφή εξόδου που δημιουργήθηκε ή να χρησιμοπο
+* Ένας αρχάριος χρήστης μπορεί εύκολα να χειριστέι ποία αντικείμενα να συμμετέχουν 
+στον μηχανισμό Ιχνηλασίας;
+* Οι έμπειροι χρήστες μπορούν να επεκτείνουν το σύστημα Ιχνηλασίας για να τροποποιήσουν
+ την μορφή εξόδου που δημιουργήθηκε ή να χρησιμοποποιήσουν ήδη υπάρχουσες γεννήτριες
+ ιχνηλασίας με πολλαπλόύς τρόπους, χωρίς να τροποιήσουν τον πυρήνα του εξομοιωτή;
+* Οι προχωρημένοι χρήστες μπορούν να τροποποιήσουν τον πυρήνα του εξομοιωτή για 
+να προσθέσουν νέες γεννήτριες και καταβόθρες Ιχνηλασίας. 
 
 
-Using Trace Helpers
+..
+	Using Trace Helpers
+
+Χρησιμοποιώντας τους Βοηθούς Ιχνηλασίας
 *******************
 
-The |ns3| trace helpers provide a rich environment for configuring and selecting
-different trace events and writing them to files. In previous sections,
-primarily "Building Topologies," we have seen several varieties of the trace
-helper methods designed for use inside other (device) helpers.
+..
+	The |ns3| trace helpers provide a rich environment for configuring and selecting
+	different trace events and writing them to files. In previous sections,
+	primarily "Building Topologies," we have seen several varieties of the trace
+	helper methods designed for use inside other (device) helpers.
 
-Perhaps you will recall seeing some of these variations::
+	Perhaps you will recall seeing some of these variations::
+
+Οι Βοηθοί Ιχνηλασίας του |ns3| παρέχουν ένα πλούσιο περιβάλλον για την παραμετροποίηση 
+και την επιλογή διαφορετικών γεγονότων Ιχνηλασίας και εγγραφή αυτών σε αρχεία. Σε 
+προηγούμενη ενότητα, και πρωτίστως στην "Δημιουργία Τοπολογιών", είχαμε δεί πολλαπλές
+μεθόδους Βοηθών Ιχνηλασίας σχεδιασμένους για την χρησή μέσα σε άλλους Βοηθούς
+(Συσκευών).
+
+Ίσως να τους θυμηθείτε βλέποντας μερικές απο αυτές παραλλαγές:
+
 
   pointToPoint.EnablePcapAll ("second");
   pointToPoint.EnablePcap ("second", p2pNodes.Get (0)->GetId (), 0);
   csma.EnablePcap ("third", csmaDevices.Get (0), true);
   pointToPoint.EnableAsciiAll (ascii.CreateFileStream ("myfirst.tr"));
 
-What may not be obvious, though, is that there is a consistent model for all of
-the trace-related methods found in the system. We will now take a little time
-and take a look at the "big picture".
+..
+	What may not be obvious, though, is that there is a consistent model for all of
+	the trace-related methods found in the system. We will now take a little time
+	and take a look at the "big picture".
 
-There are currently two primary use cases of the tracing helpers in |ns3|:
-Device helpers and protocol helpers. Device helpers look at the problem of
-specifying which traces should be enabled through a node, device pair.  For
-example, you may want to specify that pcap tracing should be enabled on a
-particular device on a specific node. This follows from the |ns3| device
-conceptual model, and also the conceptual models of the various device helpers.
-Following naturally from this, the files created follow a
-<prefix>-<node>-<device> naming convention.  
+	There are currently two primary use cases of the tracing helpers in |ns3|:
+	Device helpers and protocol helpers. Device helpers look at the problem of
+	specifying which traces should be enabled through a node, device pair.  For
+	example, you may want to specify that pcap tracing should be enabled on a
+	particular device on a specific node. This follows from the |ns3| device
+	conceptual model, and also the conceptual models of the various device helpers.
+	Following naturally from this, the files created follow a
+	<prefix>-<node>-<device> naming convention.  
 
-Protocol helpers look at the problem of specifying which traces should be
-enabled through a protocol and interface pair. This follows from the |ns3|
-protocol stack conceptual model, and also the conceptual models of internet
-stack helpers. Naturally, the trace files should follow a
-<prefix>-<protocol>-<interface> naming convention.
+	Protocol helpers look at the problem of specifying which traces should be
+	enabled through a protocol and interface pair. This follows from the |ns3|
+	protocol stack conceptual model, and also the conceptual models of internet
+	stack helpers. Naturally, the trace files should follow a
+	<prefix>-<protocol>-<interface> naming convention.
 
-The trace helpers therefore fall naturally into a two-dimensional taxonomy.
-There are subtleties that prevent all four classes from behaving identically,
-but we do strive to make them all work as similarly as possible; and whenever
-possible there are analogs for all methods in all classes.
+	The trace helpers therefore fall naturally into a two-dimensional taxonomy.
+	There are subtleties that prevent all four classes from behaving identically,
+	but we do strive to make them all work as similarly as possible; and whenever
+	possible there are analogs for all methods in all classes.
+
+Αυτό το οποίο μπορεί να μην είναι προφανές, είναι το γεγονός οτι υπάρχει ένα συνεπές 
+μοντέλο για όλες τις μεθόδους σχετικές με την Ιχνηλασία στο σύστημα. Θα πάρουμε 
+λίγο χρόνο τώρα για να ρίξουμε μια ματιά στην συνολική εικόνα.
+
+Προς στιγμήν, υπάρχουν δύο βασικές περιπτώσεις χρήσης για τους Βοηθούς Ιχνηλασίας
+στο |ns3|: Οι Βοηθοί Συσκευών και οι Βοηθοί Πρωτοκόλλων. Οι Βοηθοί Συσκευών 
+καθορίζουν ποίοι Ιχνηλάτες πρέπει να ενεργοποιηθούν μέσου ενός κόμβου, ζεύγος συσκευών.
+Για παράδειγμα, μπορείτε να προσδιορίσετε να ενεργοποιηθεί η pcap ιχνηλασία σε
+μια συγκεκριμένη συσκευή σε έναν δεδομένο κόμβο. Αυτό προκύπτει από το εννοιολογικό 
+μοντέλο των Συσκευών στο |ns3|, καθώς επίσης και απο τα εννοιλογικά μοντέλα από
+τους πολλαπλούς Βοηθούς Συσκευών. Φυσικό επόμενο αυτών, είναι τα αρχεία Ιχνηλασίας
+που δημιουργούνται θα έχουν την ακόλουθη μορφή ονομασίας 
+<πρόθεμα>-<κόμβος>-<συσκευή>
+  
+Οι Βοηθοί Πρωτοκόλλων καθορίζουν ποίοι Ιχνηλάτες πρέπει να ενεργοποιηθούν μέσω
+ενός πρωτοκόλλου, ζεύγη διεπαφών. Αυτό προκύπτει από το εννοιολογικό μοντέλο των
+Στοίβας Πρωτοκόλλων στο |ns3|, καθώς επίσης και απο τα εννοιλογικά μοντέλα των 
+Βοηθών Στοίβας Διαδικτύου. Φυσικό επόμενο αυτών, είναι τα αρχεία Ιχνηλασίας
+που δημιουργούνται, θα έχουν την ακόλουθη μορφή ονομασίας 
+<πρόθεμα>-<πρωτόκολλο>-<διεπαφή>
+
+Ως εκ τούτου, οι Βοηθοί Ιχνηλασίας εμπίπτουν φυσιολογικά σε μια δισδιάστατη
+ταξινόμηση. Υπάρχουν λεπτές έννοιες που εμποδίζουν και τις τέσσερις κλάσεις να 
+συμπεριφέρονται με τον ίδιο τρόπο, αλλά εμείς προσπαθούμε να τους κάνουμε να 
+δουλεύουν με όσο το δυνατόν όμοιο τρόπο; και οποτεδήποτε είναι δυνατόν υπάρχουν
+τα ανάλογα για όλες τις μεθόδους σε όλες τις κλάσεις.
+
+
 
   +-----------------+---------+---------+
   |                 |  pcap   |  ascii  |
@@ -512,42 +560,79 @@ possible there are analogs for all methods in all classes.
   | Protocol Helper | |check| | |check| |
   +-----------------+---------+---------+
 
-We use an approach called a ``mixin`` to add tracing functionality to our helper
-classes. A ``mixin`` is a class that provides functionality to that is
-inherited by a subclass. Inheriting from a mixin is not considered a form of
-specialization but is really a way to collect functionality. 
+..
+	We use an approach called a ``mixin`` to add tracing functionality to our helper
+	classes. A ``mixin`` is a class that provides functionality to that is
+	inherited by a subclass. Inheriting from a mixin is not considered a form of
+	specialization but is really a way to collect functionality. 
 
-Let's take a quick look at all four of these cases and their respective
-``mixins``.
+	Let's take a quick look at all four of these cases and their respective
+	``mixins``.
 
-Pcap Tracing Device Helpers
+Χρησιμοποιούμε την προσέγγιση που αποκαλείται ''mixin'' για να προσθέσουμε 
+λειτουργικότητα Ιχνηλασίας στις κλάσεις Βοηθούς. Ένα `` mixin`` είναι μια κλάση
+που παρέχει τη λειτουργικότητα που κληρονομείται από μία υποκλάση. Η κληρονομικότητα
+απο ένα ''mixin'' δεν θεωρείται μορφή εξειδίκευσης, αλλα στην πραγματικότητα 
+είναι ένας τρόπος για την συλλογή λειτουργικότητας.
+
+Ας ρίξουμε μια γρήγρορη ματιά σε όλες αυτές τις τέσσερις περιπτώσεις και τις 
+αντίστοιχες ''mixins''.
+
+..
+	Pcap Tracing Device Helpers
+
+Βοηθοί Ιχνηλασίας Συσκευών pcap 
 +++++++++++++++++++++++++++
 
-The goal of these helpers is to make it easy to add a consistent pcap trace
-facility to an |ns3| device. We want all of the various flavors of pcap tracing
-to work the same across all devices, so the methods of these helpers are
-inherited by device helpers. Take a look at ``src/network/helper/trace-helper.h`` if you
-want to follow the discussion while looking at real code.
+..
+	The goal of these helpers is to make it easy to add a consistent pcap trace
+	facility to an |ns3| device. We want all of the various flavors of pcap tracing
+	to work the same across all devices, so the methods of these helpers are
+	inherited by device helpers. Take a look at ``src/network/helper/trace-helper.h`` if you
+	want to follow the discussion while looking at real code.
 
-The class ``PcapHelperForDevice`` is a ``mixin`` provides the high level
-functionality for using pcap tracing in an |ns3| device. Every device must
-implement a single virtual method inherited from this class.::
+	The class ``PcapHelperForDevice`` is a ``mixin`` provides the high level
+	functionality for using pcap tracing in an |ns3| device. Every device must
+	implement a single virtual method inherited from this class.::
+
+Ο σκοπός αυτών των Βοηθών είναι να κάνει εύκολη την προσθήκη μιας συνεπούς pcap 
+ιχνηλασίας σε μια |ns3| Συσκευής. Επιθυμούμε όλες οι διαφορετικές εκδοχές της 
+pcap ιχνηλασίας να λειτουργούν με τον ίδιο τρόπο σε όλες τις Συσκευές, έτσι ώστε
+οι μέθοδοι απο αυτούς του Βοηθούς να κληρονομούνται απο τους Βοηθούς Συσκευών.
+Ρίξτε μια ματιά στο αρχείο ``src/network/helper/trace-helper.h`` αν επιθυμείτε 
+να εμπεδώσετε αυτή την έννοια κοιτώντας τον πραγματικό κώδικα.
+
+Η κλάση με όνομα ``PcapHelperForDevice`` είναι ένα ``mixin`` και παρέχει μια 
+λειτουργικότητα υψηλού επιπέδου για την pcap ιχνηλασία σε μια |ns3| Συσκευή. Κάθε
+Συσκευή πρέπει να υλοποιεί μια εικονική μέθοδο που κληρονομείται απο αυτη την
+κλάση.::
 
   virtual void EnablePcapInternal (std::string prefix, Ptr<NetDevice> nd, bool promiscuous) = 0;
 
-The signature of this method reflects the device-centric view of the situation
-at this level. All of the public methods inherited from class
-``PcapUserHelperForDevice`` reduce to calling this single device-dependent
-implementation method. For example, the lowest level pcap method,::
+..
+	The signature of this method reflects the device-centric view of the situation
+	at this level. All of the public methods inherited from class
+	``PcapUserHelperForDevice`` reduce to calling this single device-dependent
+	implementation method. For example, the lowest level pcap method,::
+
+Η υπογραφή αυτής της μεθόδου αντικατοπρτίζει την Συσκευό-Κεντρική άποψη της 
+κατάστασης σε αυτό το επίπεδο. Όλες οι κοινές μέθοδοι που κληρονομούνται απο την
+κλάση ``PcapUserHelperForDevice`` απλοποιούνται στο να καλούν αυτή την εξαρτώμενη 
+απο την συσκευή υλοποίηση της μεθόδου. Για παράδειγμα, το χαμηλότερο επίπεδο pcap
+μεθόδου,:: 
 
   void EnablePcap (std::string prefix, Ptr<NetDevice> nd, bool promiscuous = false, bool explicitFilename = false);
 
-will call the device implementation of ``EnablePcapInternal`` directly. All
-other public pcap tracing methods build on this implementation to provide
-additional user-level functionality. What this means to the user is that all
-device helpers in the system will have all of the pcap trace methods available;
-and these methods will all work in the same way across devices if the device
-implements ``EnablePcapInternal`` correctly.
+..
+	will call the device implementation of ``EnablePcapInternal`` directly. All
+	other public pcap tracing methods build on this implementation to provide
+	additional user-level functionality. What this means to the user is that all
+	device helpers in the system will have all of the pcap trace methods available;
+	and these methods will all work in the same way across devices if the device
+	implements ``EnablePcapInternal`` correctly.
+
+θα καλέσει την υλοποίηση της ``EnablePcapInternal`` άμεσα. 
+
 
 Pcap Tracing Device Helper Methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
