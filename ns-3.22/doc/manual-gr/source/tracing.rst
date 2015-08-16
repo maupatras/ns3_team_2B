@@ -455,15 +455,27 @@ plain-old-data (POD). Operator=, operator++, operator--, operator+,
     "/NodeList/0/$ns3::TcpL4Protocol/SocketList/0/CongestionWindow", 
     MakeCallback (&CwndTracer));
 
-This should look very familiar. It is the same thing as the previous example,
-except that a static member function of class ``Config`` is being called instead
-of a method on ``Object``; and instead of an ``Attribute`` name, a path is being
-provided.
+..	
+ This should look very familiar. It is the same thing as the previous example,
+ except that a static member function of class ``Config`` is being called instead
+ of a method on ``Object``; and instead of an ``Attribute`` name, a path is being
+ provided.
 
-The first thing to do is to read the path backward. The last segment of the path
-must be an ``Attribute`` of an ``Object``. In fact, if you had a pointer to the
-``Object`` that has the "CongestionWindow" ``Attribute`` handy (call it
-``theObject``), you could write this just like the previous example::
+Αυτό θα πρέπει να μοιάζει πολύ γνωστό. Είναι το ίδιο πράγμα με το προηγούμενο παράδειγμα,
+εκτός από το ότι μία συνάρτηση, στατικό μέλος της κλάσης ``Config`` καλείται αντί 
+μιας μεθόδου στο ``Object``. και αντί ενός ονόματος ``Attribute``, παρέχετε ένα μονοπάτι.
+
+..
+ The first thing to do is to read the path backward. The last segment of the path
+ must be an ``Attribute`` of an ``Object``. In fact, if you had a pointer to the
+ ``Object`` that has the "CongestionWindow" ``Attribute`` handy (call it
+ ``theObject``), you could write this just like the previous example::
+
+Το πρώτο πράγμα που πρέπει να κάνετε είναι να διαβάσετε το μονοπάτι προς τα πίσω. 
+Το τελευταίο τμήμα της διαδρομής πρέπει να είναι ένα ``Attribute`` ενός ``Object``. 
+Στην πραγματικότητα, αν είχατε ένα δείκτη στο ``Object`` που έχει το "CongestionWindow" 
+``Attribute`` πρακτικό ( μπορείται να το πείτε ``TheObject``), θα μπορούσατε να γράψετε 
+αυτό ακριβώς όπως στο προηγούμενο παράδειγμα ::
 
   void CwndTracer (uint32_t oldval, uint32_t newval) {}
 
