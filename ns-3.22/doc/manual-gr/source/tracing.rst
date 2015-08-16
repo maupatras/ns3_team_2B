@@ -876,22 +876,42 @@ id το οποίο θα έχει εκχωρηθεί απο το σύστημα. 
 της ενεργοποίησης ιχνηλασίας στην πρώτη συσκευή του κόμβου 21 χρησιμοποιώντας το
 πρόθεμα "prefix" θα είναι ``prefix-21-1.pcap``. 
 
-You can always use the |ns3| object name service to make this more clear.  For
-example, if you use the object name service to assign the name "server" to node
-21, the resulting pcap trace file name will automatically become,
-``prefix-server-1.pcap`` and if you also assign the name "eth0" to the device,
-your pcap file name will automatically pick this up and be called
-``prefix-server-eth0.pcap``.
+..
+ You can always use the |ns3| object name service to make this more clear.  For
+ example, if you use the object name service to assign the name "server" to node
+ 21, the resulting pcap trace file name will automatically become,
+ ``prefix-server-1.pcap`` and if you also assign the name "eth0" to the device,
+ your pcap file name will automatically pick this up and be called
+ ``prefix-server-eth0.pcap``.
 
-Finally, two of the methods shown above,::
+Μπορείτε πάντα να χρησιμοποιήσετε την υπηρεσία του ονόματος αντικειμένου του | NS3 | 
+για να γίνει αυτό πιο σαφές. Για παράδειγμα, αν χρησιμοποιείτε την υπηρεσία oνόματος
+αντικειμένου για να ορίσετε το όνομα "server" στον κόμβο 21, το όνομα του αρχείου
+ίχνους pcap που προκύπτεί θα παραχθεί αυτόματα και 8α είναι ``prefix-server-1.pcap``,
+και εκχωρήσουμε το όνομα "eth0" στη συσκευή, το όνομα του αρχείου pcap θα πάρει 
+αυτόματα την πληροφορία αυτό και θα ονομαστεί ``prefix-server-eth0.pcap``.
+
+
+.. Finally, two of the methods shown above,::
+
+Τέλος, δύο από τις μεθόδους που αναφέρονται παραπάνω, ::
+
 
   void EnablePcap (std::string prefix, Ptr<NetDevice> nd, bool promiscuous = false, bool explicitFilename = false);
   void EnablePcap (std::string prefix, std::string ndName, bool promiscuous = false, bool explicitFilename = false);
 
-have a default parameter called ``explicitFilename``. When set to true, this
-parameter disables the automatic filename completion mechanism and allows you to
-create an explicit filename. This option is only available in the methods which
-enable pcap tracing on a single device.  
+..  
+ have a default parameter called ``explicitFilename``. When set to true, this
+ parameter disables the automatic filename completion mechanism and allows you to
+ create an explicit filename. This option is only available in the methods which
+ enable pcap tracing on a single device.  
+
+έχουν μια προκαθορισμένη παράμετρο που ονομάζεται `` explicitFilename``. Όταν 
+οριστεί σε true, αυτή η παράμετρος απενεργοποιεί τον μηχανισμό της αυτόματης 
+συμπλήρωσης ονομάτων αρχείων και σας επιτρέπει να δημιουργήσετε ρητά εσείς το 
+όνομα του αρχείου. Αυτή η επιλογή είναι διαθέσιμη μόνο στις μεθόδους που
+επιτρέπουν την ιχνηλασία pcap σε μία μόνο συσκευή.
+
 
 For example, in order to arrange for a device helper to create a single
 promiscuous pcap capture file of a specific name (``my-pcap-file.pcap``) on a
