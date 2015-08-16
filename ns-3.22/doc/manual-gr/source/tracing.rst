@@ -552,13 +552,22 @@ O runtime τύπος αυτού του αντικειμένου πρωτοκόλ
 Το `` Config :: ConnectWithoutContext`` τώρα κάνει, ::
   object->TraceConnectWithoutContext ("CongestionWindow", MakeCallback (&CwndTracer));
 
-using the object pointer from "SocketList/0" which makes the connection between
-the trace source defined in the socket to the callback -- ``CwndTracer``.
+..
+ using the object pointer from "SocketList/0" which makes the connection between
+ the trace source defined in the socket to the callback -- ``CwndTracer``.
 
-Now, whenever a change is made to the ``TracedValue<uint32_t>`` representing the
-congestion window in the TCP socket, the registered callback will be executed
-and the function ``CwndTracer`` will be called printing out the old and new
-values of the TCP congestion window.
+χρησιμοποιώντας το δείκτη του αντικειμένου από το "SocketList/0"  το οποίο κάνει τη σύνδεση
+μεταξύ της πηγής ανίχνευσης που ορίζεται στο socket για την επανάκληση -- ``CwndTracer``.
+
+..
+ Now, whenever a change is made to the ``TracedValue<uint32_t>`` representing the
+ congestion window in the TCP socket, the registered callback will be executed
+ and the function ``CwndTracer`` will be called printing out the old and new
+ values of the TCP congestion window.
+
+Τώρα, κάθε φορά που γίνεται μια αλλαγή στο ``TracedValue<uint32_t>`` εκπροσωπώντας το παράθυρο
+συμφόρησης στο TCP socket, η εγγεγραμμένη επανάκληση θα εκτελεστεί και θα κληθεί η συνάρτηση ``CwndTracer``
+εκτυπώνοντας τις παλιές και τις καινούργιες τιμές του ΤCP παραθύρου συμφόρησης.
 
 ..
 	Using the Tracing API
