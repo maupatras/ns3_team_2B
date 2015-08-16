@@ -913,9 +913,10 @@ id το οποίο θα έχει εκχωρηθεί απο το σύστημα. 
 επιτρέπουν την ιχνηλασία pcap σε μία μόνο συσκευή.
 
 
-For example, in order to arrange for a device helper to create a single
-promiscuous pcap capture file of a specific name (``my-pcap-file.pcap``) on a
-given device, one could::
+..
+ For example, in order to arrange for a device helper to create a single
+ promiscuous pcap capture file of a specific name (``my-pcap-file.pcap``) on a
+ given device, one could::
 
   Ptr<NetDevice> nd;
   ...
