@@ -1029,7 +1029,7 @@ ascii διαθέσιμες. Aυτές οι μέθοδοι θα λειτουργ�
  find the details of these methods; but to summarize ...
 
 Μπορείτε να μελετήσετε το Doxygen για την κλάση `` TraceHelperForDevice`` για να
-βρείτε τις λεπτομέρειες αυτών των μεθόδων? αλλά για να συνοψίσουμε ...
+βρείτε τις λεπτομέρειες αυτών των μεθόδων αλλά για να συνοψίσουμε ...
 
 ..
  There are twice as many methods available for ascii tracing as there were for
@@ -1050,19 +1050,34 @@ ascii διαθέσιμες. Aυτές οι μέθοδοι θα λειτουργ�
 μεθόδων του API, γίνεται διπλάσιος για να επιτρέπει όλους τους συνδυασμούς.
 
 
-Just as in pcap tracing, you can enable ascii tracing on a particular
-node/net-device pair by providing a ``Ptr<NetDevice>`` to an ``EnableAscii``
-method. The ``Ptr<Node>`` is implicit since the net device must belong to
-exactly one ``Node``. For example,::
+.. 
+ Just as in pcap tracing, you can enable ascii tracing on a particular
+ node/net-device pair by providing a ``Ptr<NetDevice>`` to an ``EnableAscii``
+ method. The ``Ptr<Node>`` is implicit since the net device must belong to
+ exactly one ``Node``. For example,::
+
+Ακριβώς όπως και στην pcap ιχνηλασία, μπορείτε να ενεργοποιήσετε την ιχνηλασία 
+ASCII σε ένα συγκεκριμένο ζεύγος κόμβων / συσκευή δικτύου με την παροχή ενός 
+``Ptr<NetDevice> `` σε μια ``EnableAscii`` μέθοδο. Το ``Ptr <Node>`` εννοείται, 
+δεδομένου ότι η συσκευή δικτύου πρέπει να ανήκει σε ακριβώς ένα κόμβο ``Node``. 
+Για παράδειγμα,::
+
 
   Ptr<NetDevice> nd;
   ...
   helper.EnableAscii ("prefix", nd);
 
-In this case, no trace contexts are written to the ascii trace file since they
-would be redundant. The system will pick the file name to be created using the
-same rules as described in the pcap section, except that the file will have the
-suffix ".tr" instead of ".pcap".
+..
+ In this case, no trace contexts are written to the ascii trace file since they
+ would be redundant. The system will pick the file name to be created using the
+ same rules as described in the pcap section, except that the file will have the
+ suffix ".tr" instead of ".pcap".
+
+Σε αυτήν την περίπτωση, το γενικό περιβάλλον ιχνηλασίας δεν γράφετε στο αρχείο 
+ιχνηλασίας ascii, καθώς είναι πλεονάζων. Το σύστημα θα πάρει το όνομα του αρχείου 
+που θα δημιουργηθεί χρησιμοποιώντας τους ίδιους κανόνες, όπως περιγράφονται στην 
+ενότητα για το pcap, εκτός από το ότι το αρχείο θα έχει την κατάληξη ".tr" αντί 
+αντί για ".pcap".
 
 If you want to enable ascii tracing on more than one net device and have all
 traces sent to a single file, you can do that as well by using an object to
