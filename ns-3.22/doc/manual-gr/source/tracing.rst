@@ -542,10 +542,14 @@ O runtime τύπος αυτού του αντικειμένου πρωτοκόλ
 μηδενικό socket της λίστας των sockets του μηδενικού κόμβου στη Nodelise -- o πρώτος κόμβος που
 κατασκευάστηκε στη προσομοίωση.
 
-This socket, the type of which turns out to be an ``ns3::TcpSocketImpl`` defines
-an attribute called "CongestionWindow" which is a ``TracedValue<uint32_t>``.
-The ``Config::ConnectWithoutContext`` now does a,::
+..
+ This socket, the type of which turns out to be an ``ns3::TcpSocketImpl`` defines
+ an attribute called "CongestionWindow" which is a ``TracedValue<uint32_t>``.
+ The ``Config::ConnectWithoutContext`` now does a,::
 
+Αυτό το socket, o τύπος του οποίου αποδεικνύεται να είναι ο ``ns3::TcpSocketImpl`` ορίζει 
+ένα χαρακτηριστικό που ονομάζεται "CongestionWindow" το οποίο είναι ένα ``TracedValue<uint32_t>``.
+Το `` Config :: ConnectWithoutContext`` τώρα κάνει, ::
   object->TraceConnectWithoutContext ("CongestionWindow", MakeCallback (&CwndTracer));
 
 using the object pointer from "SocketList/0" which makes the connection between
