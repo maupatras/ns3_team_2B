@@ -918,12 +918,22 @@ id το οποίο θα έχει εκχωρηθεί απο το σύστημα. 
  promiscuous pcap capture file of a specific name (``my-pcap-file.pcap``) on a
  given device, one could::
 
+Για παράδειγμα, προκειμένου να ρυθμίσουμε για ένα βοηθό συσκευής να δημιουργήσει 
+ένα ρχείο καταγραφής pcap  με ένα συγκεκριμένο όνομα (`` my-pcap-file.pcap``) 
+για μία δεδομένη συσκευή, κάποιος θα μπορούσε να κάνει το ακόλουθο::
+ 
+
   Ptr<NetDevice> nd;
   ...
   helper.EnablePcap ("my-pcap-file.pcap", nd, true, true);
 
-The first ``true`` parameter enables promiscuous mode traces and the second
-tells the helper to interpret the ``prefix`` parameter as a complete filename.
+..  
+ The first ``true`` parameter enables promiscuous mode traces and the second
+ tells the helper to interpret the ``prefix`` parameter as a complete filename.
+ 
+Η πρώτη παράμετρος `` true`` επιτρέπει τον ετερόκλητο τρόπο λειτουργίας της 
+ιχνηλασίας και το δεύτερο λέει στον βοηθό να ερμηνεύσει την `` prefix`` παράμετρο 
+ως ένα πλήρες όνομα αρχείου.
 
 Ascii Tracing Device Helpers
 ++++++++++++++++++++++++++++
