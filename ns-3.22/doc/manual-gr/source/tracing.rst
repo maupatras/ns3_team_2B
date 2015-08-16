@@ -383,6 +383,8 @@ plain-old-data (POD). Operator=, operator++, operator--, operator+,
  Finally, the line,::
 
 Τέλος, η γραμμή, ::
+  
+  myObject->m_myInt = 1234;
 
 ..  
  should be interpreted as an invocation of ``operator=`` on the member variable
