@@ -948,19 +948,34 @@ id το οποίο θα έχει εκχωρηθεί απο το σύστημα. 
 Η συμπεριφορά του βοηθού ιχνηλασίας ascii ``mixin`` είναι ουσιαστικά παρόμοια με
 την έκδοση pcap. Ενώ παρακολουθείτε το θέμα αυτό, ρίξτε μια ματιά στο `` src / δίκτυο / βοηθού / ίχνος-helper.h`` 
 κοιτάζοντας πραγματικό κώδικα.
-The class ``AsciiTraceHelperForDevice`` adds the high level functionality for
-using ascii tracing to a device helper class. As in the pcap case, every device
-must implement a single virtual method inherited from the ascii trace
-``mixin``.::
+.. 
+ The class ``AsciiTraceHelperForDevice`` adds the high level functionality for
+ using ascii tracing to a device helper class. As in the pcap case, every device
+ must implement a single virtual method inherited from the ascii trace
+ ``mixin``.::
+
+Η κλάση `` AsciiTraceHelperForDevice`` προσθέτει τη λειτουργικότητα υψηλού επιπέδου 
+ανίχνευσης ASCII σε μια κλάση βοηθού συσκευής. Όπως και στην περίπτωση pcap, κάθε 
+συσκευή πρέπει να υλοποιήση μία εικονική μέθοδος που κληρονομείτε από την ascii
+ιχνηλασία ``mixin``.::
 
   virtual void EnableAsciiInternal (Ptr<OutputStreamWrapper> stream, std::string prefix, Ptr<NetDevice> nd) = 0;
 
-The signature of this method reflects the device-centric view of the situation
-at this level; and also the fact that the helper may be writing to a shared
-output stream. All of the public ascii-trace-related methods inherited from
-class ``AsciiTraceHelperForDevice`` reduce to calling this single device-
-dependent implementation method. For example, the lowest level ascii trace
-methods,::
+..
+ The signature of this method reflects the device-centric view of the situation
+ at this level; and also the fact that the helper may be writing to a shared
+ output stream. All of the public ascii-trace-related methods inherited from
+ class ``AsciiTraceHelperForDevice`` reduce to calling this single device-
+ dependent implementation method. For example, the lowest level ascii trace
+ methods,::
+
+Η υπογραφή αυτής της μεθόδου αντανακλά τον προσανατολισμό με βάση την συσκευή της 
+κατάστασης σε αυτό το επίπεδο? και, επίσης, το γεγονός ότι ο βοηθός μπορεί να γράφει 
+σε έναν διαμοιραζόμενο ρεύμα εξόδου. Όλές οι δημόσιες μέθοδοι σχετικές με την 
+ιχνηλασία ascii που κληρονομούνται από την κλάση `` AsciiTraceHelperForDevice`` 
+μειώνουν την κλήση αυτής της μεθόδου της οποίας η υλοποίηση εξαρτάται απο την 
+συσκευή. Για παράδειγμα, οι χαμηλότερου επιπέδου μέθοδοι ιχνηλασίας ascii, ::
+
 
   void EnableAscii (std::string prefix, Ptr<NetDevice> nd);
   void EnableAscii (Ptr<OutputStreamWrapper> stream, Ptr<NetDevice> nd);
