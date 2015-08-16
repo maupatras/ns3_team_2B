@@ -761,9 +761,7 @@ pcap ιχνηλασίας να λειτουργούν με τον ίδιο τρ�
 θα καλέσει την υλοποίηση της ``EnablePcapInternal`` άμεσα. 
 
 
-..  Pcap Tracing Device Helper Methods
-
-Βοηθός επιλογής ονόματος αρχείου για συσκευή ιχνηλασίας Pcap
+ Pcap Tracing Device Helper Methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
@@ -850,18 +848,33 @@ same type as that managed by the device helper.::
 
   helper.EnablePcapAll ("prefix");
 
-Pcap Tracing Device Helper Filename Selection
+.. Pcap Tracing Device Helper Filename Selection
+Βοηθός επιλογής ονόματος αρχείου για συσκευή ιχνηλασίας Pcap
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Implicit in the method descriptions above is the construction of a complete
-filename by the implementation method. By convention, pcap traces in the |ns3|
-system are of the form ``<prefix>-<node id>-<device id>.pcap``
+..
+ Implicit in the method descriptions above is the construction of a complete
+ filename by the implementation method. By convention, pcap traces in the |ns3|
+ system are of the form ``<prefix>-<node id>-<device id>.pcap``
 
-As previously mentioned, every node in the system will have a system-assigned
-node id; and every device will have an interface index (also called a device id)
-relative to its node. By default, then, a pcap trace file created as a result
-of enabling tracing on the first device of node 21 using the prefix "prefix"
-would be ``prefix-21-1.pcap``.
+Η κατασκευή ενώς πλήρη ονόματος αρχείου αναφέρεται απόλυτα στην περιγραφή των
+μεθόδων απο την μέθοδο υλοποίησης. Κατά σύμβαση, τα pcap ίχνη στο | NS3 |
+σύστημα είναι της μορφής ``<πρόθεμα>-<id κόμβου>-<id συσκευής>.pcap``
+
+..
+ As previously mentioned, every node in the system will have a system-assigned
+ node id; and every device will have an interface index (also called a device id)
+ relative to its node. By default, then, a pcap trace file created as a result
+ of enabling tracing on the first device of node 21 using the prefix "prefix"
+ would be ng tracing on the first device of node 21 using the prefix "prefix"
+ would be ``prefix-21-1.pcap``.
+
+Όπως αναφέρθηκε προηγουμένως, κάθε κόμβος του συστήματος θα έχει ένα αναγνωριστικό
+id το οποίο θα έχει εκχωρηθεί απο το σύστημα. Κάθε συσκευή θα έχει ένα δείκτη 
+διεπαφής (που ονομάζεται επίσης αναγνωριστικό συσκευής) σχετικό με τον κόμβο του. 
+Από προεπιλογή, στη συνέχεια, όταν ένα αρχείο ίχνους pcap δημιουργείται ως αποτέλεσμα
+της ενεργοποίησης ιχνηλασίας στην πρώτη συσκευή του κόμβου 21 χρησιμοποιώντας το
+πρόθεμα "prefix" θα είναι ``prefix-21-1.pcap``. 
 
 You can always use the |ns3| object name service to make this more clear.  For
 example, if you use the object name service to assign the name "server" to node
