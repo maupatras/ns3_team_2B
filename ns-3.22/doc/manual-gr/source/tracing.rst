@@ -1024,16 +1024,31 @@ ascii διαθέσιμες. Aυτές οι μέθοδοι θα λειτουργ�
   void EnableAsciiAll (std::string prefix);
   void EnableAsciiAll (Ptr<OutputStreamWrapper> stream);
 
-You are encouraged to peruse the Doxygen for class ``TraceHelperForDevice`` to
-find the details of these methods; but to summarize ...
+..
+ You are encouraged to peruse the Doxygen for class ``TraceHelperForDevice`` to
+ find the details of these methods; but to summarize ...
 
-There are twice as many methods available for ascii tracing as there were for
-pcap tracing. This is because, in addition to the pcap-style model where traces
-from each unique node/device pair are written to a unique file, we support a
-model in which trace information for many node/device pairs is written to a
-common file.  This means that the <prefix>-<node>-<device> file name generation
-mechanism is replaced by a mechanism to refer to a common file; and the number
-of API methods is doubled to allow all combinations.
+Μπορείτε να μελετήσετε το Doxygen για την κλάση `` TraceHelperForDevice`` για να
+βρείτε τις λεπτομέρειες αυτών των μεθόδων? αλλά για να συνοψίσουμε ...
+
+..
+ There are twice as many methods available for ascii tracing as there were for
+ pcap tracing. This is because, in addition to the pcap-style model where traces
+ from each unique node/device pair are written to a unique file, we support a
+ model in which trace information for many node/device pairs is written to a
+ common file.  This means that the <prefix>-<node>-<device> file name generation
+ mechanism is replaced by a mechanism to refer to a common file; and the number
+ of API methods is doubled to allow all combinations.
+
+Υπάρχουν διπλάσιες μέθοδοι διαθέσιμες για την ιχνηλασία σε ascii απο αυτές που 
+υπαρχουν για pcap. Αυτό συμβαίνει διότι,πέραν του στυλ του μοντέλου pcap, όπου 
+τα ίχνη από κάθε ένα και μοναδικό ζεύγος κόμβων/συσκευή είναι γραμμένα σε ένα 
+μοναδικό αρχείο, υποστηρίζουμε ένα μοντέλο όπου πληροφορίες ίχνηλασίας για πολλά 
+ζευγάρια κόμβων / συσκευή είναι γραμμένα σε ένα κοινό αρχείο. Αυτό σημαίνει ότι 
+ο μηχανισμός δημιουργίας ονόματος αρχείων <prefix>-<node>-<device> αντικαταθίσταται 
+από ένα μηχανισμό για να γίνεται αναφορά σε ένα κοινό αρχείο. και ο αριθμός των 
+μεθόδων του API, γίνεται διπλάσιος για να επιτρέπει όλους τους συνδυασμούς.
+
 
 Just as in pcap tracing, you can enable ascii tracing on a particular
 node/net-device pair by providing a ``Ptr<NetDevice>`` to an ``EnableAscii``
