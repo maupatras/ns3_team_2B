@@ -935,13 +935,19 @@ id το οποίο θα έχει εκχωρηθεί απο το σύστημα. 
 ιχνηλασίας και το δεύτερο λέει στον βοηθό να ερμηνεύσει την `` prefix`` παράμετρο 
 ως ένα πλήρες όνομα αρχείου.
 
-Ascii Tracing Device Helpers
-++++++++++++++++++++++++++++
+.. Ascii Tracing Device Helpers
 
-The behavior of the ascii trace helper ``mixin`` is substantially similar to 
-the pcap version. Take a look at ``src/network/helper/trace-helper.h`` if you want to 
-follow the discussion while looking at real code.
+Βοηθοί συσκευών ιχνηλασίας Ascii
+++++++++++++++++++++++++++++++++
 
+..
+ The behavior of the ascii trace helper ``mixin`` is substantially similar to 
+ the pcap version. Take a look at ``src/network/helper/trace-helper.h`` if you want to 
+ follow the discussion while looking at real code.
+
+Η συμπεριφορά του βοηθού ιχνηλασίας ascii ``mixin`` είναι ουσιαστικά παρόμοια με
+την έκδοση pcap. Ενώ παρακολουθείτε το θέμα αυτό, ρίξτε μια ματιά στο `` src / δίκτυο / βοηθού / ίχνος-helper.h`` 
+κοιτάζοντας πραγματικό κώδικα.
 The class ``AsciiTraceHelperForDevice`` adds the high level functionality for
 using ascii tracing to a device helper class. As in the pcap case, every device
 must implement a single virtual method inherited from the ascii trace
