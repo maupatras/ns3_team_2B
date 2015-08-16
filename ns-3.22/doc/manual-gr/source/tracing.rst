@@ -511,20 +511,36 @@ plain-old-data (POD). Operator=, operator++, operator--, operator+,
 η προσομοίωση. Αυτός ο κόμβος είναι στην πραγματικότητα ένα `` Ptr <Κόμβος> `` και έτσι είναι μια υποκατηγορία
 ένα: CPP: τάξη: `NS3 :: Object`.
 
-As described in the :ref:`Object-model` section, |ns3| supports an object
-aggregation model. The next path segment begins with the "$" character which
-indicates a ``GetObject`` call should be made looking for the type that follows.
-When a node is initialized by an ``InternetStackHelper`` a number of interfaces
-are aggregated to the node. One of these is the TCP level four protocol. The
-runtime type of this protocol object is ``ns3::TcpL4Protocol''. When the
-``GetObject`` is executed, it returns a pointer to the object of this type.
+..
+ As described in the :ref:`Object-model` section, |ns3| supports an object
+ aggregation model. The next path segment begins with the "$" character which
+ indicates a ``GetObject`` call should be made looking for the type that follows.
+ When a node is initialized by an ``InternetStackHelper`` a number of interfaces
+ are aggregated to the node. One of these is the TCP level four protocol. The
+ runtime type of this protocol object is ``ns3::TcpL4Protocol''. When the
+ ``GetObject`` is executed, it returns a pointer to the object of this type.
 
-The ``TcpL4Protocol`` class defines an Attribute called "SocketList" which is a
-list of sockets.  Each socket is actually an ``ns3::Object`` with its own
-``Attributes``.  The items in the list of sockets are referred to by index just
-as in the NodeList, so "SocketList/0" refers to the zeroth socket in the list of
-sockets on the zeroth node in the NodeList -- the first node constructed in the
-simulation.
+Όπως αναφέρθηκε και στο τμήμα :ref:`Object-model`, ο |ns3| υποστηρίζει ένα μοντέλο συνάθροισης αντικειμένου. 
+Το επόμενο κομμάτι του μονοπατιού ξεκινάει με το χαρακτήρα που δείχνει ότι μια κλήση ``GetObject`` 
+θα πρέπει να ψάχνει για το τύπο που ακολουθεί. Όταν ένας κόμβος αρχικοποιείται από το ``InternetStackHelper``, 
+ένας αριθμός διεπαφών συγκεντρώνονται στον κόμβο. Ένα από αυτά είναι το επίπεδο 4 του TCP πρωτοκόλλου.
+O runtime τύπος αυτού του αντικειμένου πρωτοκόλλου είναι ο ``ns3::TcpL4Protocol''. 
+Όταν η ``GetObject`` εκτελείται, επιστρέφει ένα δείκτη στο αντικέιμενο αυτού του τύπου.   
+
+..
+ The ``TcpL4Protocol`` class defines an Attribute called "SocketList" which is a
+ list of sockets.  Each socket is actually an ``ns3::Object`` with its own
+ ``Attributes``.  The items in the list of sockets are referred to by index just
+ as in the NodeList, so "SocketList/0" refers to the zeroth socket in the list of
+ sockets on the zeroth node in the NodeList -- the first node constructed in the
+ simulation.
+
+Η κλήση ``TcpL4Protocol`` καθορίζει ένα χαρακτηριστικό που ονομάζεται "SocketList" το 
+οποίο είναι μία λίστα από sockets. Κάθε socket είναι στη πραγματικότητα ένα``ns3::Object``
+με τα δικά του χαρακτηριστικά (``Attributes``). Τα αντικείμενα στη λίστα των sockets 
+αναφέρονται από ένα δείκτη όπως ακριβώς στη Nodelist, έτσι το "SocketList/0" αναφέρεται στο
+μηδενικό socket της λίστας των sockets του μηδενικού κόμβου στη Nodelise -- o πρώτος κόμβος που
+κατασκευάστηκε στη προσομοίωση.
 
 This socket, the type of which turns out to be an ``ns3::TcpSocketImpl`` defines
 an attribute called "CongestionWindow" which is a ``TracedValue<uint32_t>``.
