@@ -308,10 +308,17 @@ plain-old-data (POD). Operator=, operator++, operator--, operator+,
  declaration.
 
 
-The ``.AddTraceSource`` provides the "hooks" used for connecting the trace
-source to the outside world. The ``TracedValue`` declaration provides the
-infrastructure that overloads the operators mentioned above and drives the
-callback process.::
+..
+ The ``.AddTraceSource`` provides the "hooks" used for connecting the trace
+ source to the outside world. The ``TracedValue`` declaration provides the
+ infrastructure that overloads the operators mentioned above and drives the
+ callback process.::
+
+Η ``.AddTraceSource`` δήλωση παρέχει τους ""συνδέσμους" που χρησιμοποιειούνται για τη 
+σύνδεση της πηγής ιχνηλασίας με τον έξω κόσμο. Η δήλωση ``TracedValue`` παρέχει την
+υποδομή που υπεφορτώνει τους τελεστές που αναφέρθηκαν πιο πάνω και οδηγεί
+διαδικασία επανάκλησης . ::
+ 
 
   void
   IntTrace (Int oldValue, Int newValue)
@@ -319,9 +326,15 @@ callback process.::
     std::cout << "Traced " << oldValue << " to " << newValue << std::endl;
   }
 
-This is the definition of the trace sink. It corresponds directly to a callback
-function. This function will be called whenever one of the operators of the
-``TracedValue`` is executed.::
+..
+ This is the definition of the trace sink. It corresponds directly to a callback
+ function. This function will be called whenever one of the operators of the
+ ``TracedValue`` is executed.::
+
+Αυτός είναι ο ορισμός των καταβοθρών ανίχνεσης. Αυτό ανταποκρίνεται άμεσα σε 
+σε μία συνάρτηση επανάκλησης. Η συνάρτηση αυτή θα καλείται σε κάθε περίπτωση 
+όπου κάποιος απο τους τελεστές της ``TracedValue`` εκτελείται. ::
+
 
   int
   main (int argc, char *argv[])
