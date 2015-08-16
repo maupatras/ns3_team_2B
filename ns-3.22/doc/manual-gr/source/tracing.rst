@@ -483,18 +483,33 @@ plain-old-data (POD). Operator=, operator++, operator--, operator+,
 
   theObject->TraceConnectWithoutContext ("CongestionWindow", MakeCallback (&CwndTracer));
 
-It turns out that the code for ``Config::ConnectWithoutContext`` does exactly
-that. This function takes a path that represents a chain of ``Object`` pointers
-and follows them until it gets to the end of the path and interprets the last
-segment as an ``Attribute`` on the last object. Let's walk through what
-happens.
+..
+ It turns out that the code for ``Config::ConnectWithoutContext`` does exactly
+ that. This function takes a path that represents a chain of ``Object`` pointers
+ and follows them until it gets to the end of the path and interprets the last
+ segment as an ``Attribute`` on the last object. Let's walk through what
+ happens.
 
-The leading "/" character in the path refers to a so-called namespace. One of the
-predefined namespaces in the config system is "NodeList" which is a list of all of
-the nodes in the simulation. Items in the list are referred to by indices into the 
-list, so "/NodeList/0" refers to the zeroth node in the list of nodes created by
-the simulation. This node is actually a ``Ptr<Node>`` and so is a subclass of
-an :cpp:class:`ns3::Object`.  
+Αποδεικνύεται ότι ο κώδικας για το ``Config::ConnectWithoutContext`` κάνει ακριβώς
+αυτό. Η συνάρτηση αυτή παίρνει μια διαδρομή που αντιπροσωπεύει μια αλυσίδα απο 
+δείκτες ``Object`` και τους ακολουθεί μέχρι να φτάσει στο τέλος της διαδρομής ερμηνεύοντας 
+το τελευταίο μέρος ως ``Attribute`` στο τελευταίο αντικείμενο. Ας δούμε τι συμβαίνει.
+
+..
+ The leading "/" character in the path refers to a so-called namespace. One of the
+ predefined namespaces in the config system is "NodeList" which is a list of all of
+ the nodes in the simulation. Items in the list are referred to by indices into the 
+ list, so "/NodeList/0" refers to the zeroth node in the list of nodes created by
+ the simulation. This node is actually a ``Ptr<Node>`` and so is a subclass of
+ an :cpp:class:`ns3::Object`.  
+
+Ο προπορευόμενος χαρακτήρας "/" στη διαδρομή αναφέρεται σε ένα χώρο ονομάτων. Ένας από
+προκαθορισμένους χώρους ονομάτων στο σύστημα config είναι το "NodeList", ο οποίος είναι 
+μια λίστα με όλους τους κόμβους στην προσομοίωση. Τα στοιχεία της λίστας που αναφέρεται 
+από δείκτες στον
+λίστα, έτσι "/ NodeList / 0" αναφέρεται προς τον κόμβο μηδενικής στον κατάλογο των κόμβων που δημιουργούνται από
+η προσομοίωση. Αυτός ο κόμβος είναι στην πραγματικότητα ένα `` Ptr <Κόμβος> `` και έτσι είναι μια υποκατηγορία
+ένα: CPP: τάξη: `NS3 :: Object`.
 
 As described in the :ref:`Object-model` section, |ns3| supports an object
 aggregation model. The next path segment begins with the "$" character which
