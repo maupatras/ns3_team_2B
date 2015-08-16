@@ -307,6 +307,11 @@ plain-old-data (POD). Operator=, operator++, operator--, operator+,
  two important lines of code are the ``.AddTraceSource`` and the ``TracedValue``
  declaration.
 
+Δεδομένου ότι το σύστημα ιχνηλασίας έχει δομηθεί με χαρακτηριστικά, και τα χαρακτηριστικά
+εργάζονται με αντικείμενα, πρέπει να υπάρχει ένα | NS3 | αντικείμενο `` Object`` για την 
+πηγή ιχνηλασίας. Οι δυο πιο σημαντικές γραμμές του κώδικα είναι η ``.AddTraceSource`` και η 
+``TracedValue`` δηλώσεις.
+
 
 ..
  The ``.AddTraceSource`` provides the "hooks" used for connecting the trace
@@ -374,9 +379,10 @@ plain-old-data (POD). Operator=, operator++, operator--, operator+,
 ανατήθετε στην πηγή ίχνηλασίας. Ας αγνοήσουμε το κομμάτι του περιβάλλοντος, δεδομένου 
 ότι δεν είναι ακόμη σημαντικό.
 
-Finally, the line,::
+..
+ Finally, the line,::
 
-  myObject->m_myInt = 1234;
+Τέλος, η γραμμή, ::
 
 should be interpreted as an invocation of ``operator=`` on the member variable
 ``m_myInt`` with the integer :math:`1234` passed as a parameter. It turns out
