@@ -980,15 +980,28 @@ id το οποίο θα έχει εκχωρηθεί απο το σύστημα. 
   void EnableAscii (std::string prefix, Ptr<NetDevice> nd);
   void EnableAscii (Ptr<OutputStreamWrapper> stream, Ptr<NetDevice> nd);
 
-will call the device implementation of ``EnableAsciiInternal`` directly,
-providing either a valid prefix or stream.  All other public ascii tracing 
-methods will build on these low-level functions to provide additional user-level
-functionality. What this means to the user is that all device helpers in the 
-system will have all of the ascii trace methods available; and these methods
-will all work in the same way across devices if the devices implement 
-``EnablAsciiInternal`` correctly.
+..
+ will call the device implementation of ``EnableAsciiInternal`` directly,
+ providing either a valid prefix or stream.  All other public ascii tracing 
+ methods will build on these low-level functions to provide additional user-level
+ functionality. What this means to the user is that all device helpers in the 
+ system will have all of the ascii trace methods available; and these methods
+ will all work in the same way across devices if the devices implement 
+ ``EnablAsciiInternal`` correctly.
 
-Ascii Tracing Device Helper Methods
+θα καλέσουν την `` EnableAsciiInternal`` που υλοποιείται σε κάθε συσκευή άμεσα,
+παρέχοντας είτε ένα έγκυρο πρόθεμα ή μια ροή. Όλα οι άλλες δημόσιες μέθοδοι 
+ιχνηλασίας θα βασιστούν σε αυτές τις μεθόδους χαμηλού επιπέδου για να παράσχουν
+πρόσθετη λειτουργικότητα σε επίπεδο χρήστη.Αυτό που σημαίνει για το χρήστη είναι 
+ότι όλοι οι βοηθοί συσκευής στο σύστημα θα έχουν όλες τις μεθόδους ιχνηλασίας 
+ascii διαθέσιμες. Aυτές οι μέθοδοι θα λειτουργούν όλες με τον ίδιο τρόπο σε όλες 
+τις συσκευές, αν οι συσκευές υλοποιούν σωστά την `` EnablAsciiInternal`` .
+
+
+.. Ascii Tracing Device Helper Methods
+
+Μέθοδοι βοηθοί συσκευών ιχνηλασίας Ascii
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
