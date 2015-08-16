@@ -761,7 +761,9 @@ pcap ιχνηλασίας να λειτουργούν με τον ίδιο τρ�
 θα καλέσει την υλοποίηση της ``EnablePcapInternal`` άμεσα. 
 
 
-Pcap Tracing Device Helper Methods
+..  Pcap Tracing Device Helper Methods
+
+Βοηθός επιλογής ονόματος αρχείου για συσκευή ιχνηλασίας Pcap
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
